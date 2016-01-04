@@ -59,6 +59,23 @@ public class ListIterator {
 		
 	}
 	
+	public long deleteCurrent(){
+		long value = current.data;
+		if(previous == null){ 				//beginning of list
+			ourList.setFirst(current.next);
+			reset();
+		}
+		else{
+			previous.next = current.next;
+			if(atEnd())
+				reset();
+			else
+				current = current.next;
+		}
+		return value;
+			
+	}
+	
 	
 	
 }

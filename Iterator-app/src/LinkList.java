@@ -18,14 +18,15 @@ public class LinkList {
 	
 	public boolean isEmpty(){
 		
-		return first==null;
+		return first == null;
 			
 	}
 	
-	public ListIterator iteratorList(){
-		
-		return new ListIterator(this);
-	}
+	
+	public ListIterator getIterator() // return iterator
+	{
+	return new ListIterator(this); // initialized with
+	}								// this list
 	
 	public void displayList(){
 		Link current = first;
@@ -33,6 +34,7 @@ public class LinkList {
 			current.displayLink();
 			current = current.next;
 		}
+		System.out.println("");
 	}
 }
 
